@@ -306,7 +306,7 @@ router.get("/contact",(req,res) => {
     res.json({msg:"this is contact pages"});
 })
 
-router.post("/register",async(req,res)=>{
+router.post("/Register",async(req,res)=>{
     const { name,email, phoneNumber,password,confPassword} = req.body;
 
     if(!email || !name || !phoneNumber || !password || !confPassword){
