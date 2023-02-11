@@ -9,6 +9,17 @@ mongoose.set('strictQuery', true);
 app.use(express.json());
 var cookieParser = require('cookie-parser')
 app.use(cookieParser())
+
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./client/build/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
 //app.use(express.urlencoded({ extended: true }))
 const PORT = 8000;
 require('./connection/connection');

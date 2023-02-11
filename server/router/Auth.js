@@ -80,7 +80,7 @@ const fileFilter = function(req,file,cb){
 const upload = multer({storage,fileFilter});
 
 
-router.post("/arosh",Authenticate,upload.single('photo'),(req,res) => {
+router.post("/arosh",upload.single('photo'),(req,res) => {
     const name = req.body.name;
     const birthday = req.body.birthday;
     const photo = req.body.photo
@@ -301,7 +301,7 @@ router.get("/getupload/:name",async(req,res) => {
 router.get("/",(req,res) => {
     res.json({msg:"this is router pages"});
 })
-router.get("/contact",Authenticate,(req,res) => {
+router.get("/contact",(req,res) => {
     res.send(req.rootuser);
     res.json({msg:"this is contact pages"});
 })

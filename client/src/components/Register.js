@@ -20,7 +20,7 @@ const Register = () => {
         try {
 
             const {name, email, phoneNumber, password, confPassword } = user 
-            const res = await axios.post('http://localhost:8000/register',user ,{
+            const res = await axios.post('/register',user ,{
                 
                 Headers:{
                     'Content-Type':'application/json'

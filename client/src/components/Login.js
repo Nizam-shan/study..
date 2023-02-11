@@ -20,7 +20,7 @@ let name , value
     e.preventDefault();
    try {
     const {email,password} = user
-    const res = await axios.post('http://localhost:8000/Login' ,user,{
+    const res = await axios.post('/Login' ,user,{
       Headers:{
         'Content-Type':'application/json'
       },

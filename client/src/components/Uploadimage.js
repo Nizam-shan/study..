@@ -55,7 +55,7 @@ const UpdateImage = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:8000/image/${props.match.params.name}`,{images:imageurl});
+      const response = await axios.put(`/image/${props.match.params.name}`,{images:imageurl});
       console.log(response.data);
       window.alert("updated")
     } catch (error) {

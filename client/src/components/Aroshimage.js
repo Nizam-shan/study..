@@ -33,7 +33,7 @@ const handleSubmit = (e) => {
     formData.append('name',newUser.name);
     formData.append('photo',newUser.photo);
     console.log(newUser.photo);
-    axios.post('http://localhost:8000/arosh',formData)
+    axios.post('/arosh',formData)
         .then(res => {
             console.log(res);
             window.alert("uploaded")

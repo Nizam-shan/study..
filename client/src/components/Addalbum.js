@@ -49,7 +49,7 @@ const Addalbum = () => {
         e.preventDefault();
         const {name,description} = info;
         try{
-            const res = await axios.post('http://localhost:8000/upload',{name,description})
+            const res = await axios.post('/upload',{name,description})
             console.log(res); 
             window.alert("uploaded") 
         } catch (err) {
@@ -62,7 +62,7 @@ const Addalbum = () => {
     const getData = async() => {
        
         try{
-        const res = await axios.get('http://localhost:8000/all');
+        const res = await axios.get('/all');
         const array = Object.values(res.data.msg);
         setGet(array);
         console.log("data",res.data.msg);
